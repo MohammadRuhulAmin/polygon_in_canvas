@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Drawing a Circle</title>
+    <style>
+        #myCanvas {
+            height: 400px;
+            width: 400px;
+            border: 1px solid blue;
+        }   
+    </style>
+</head>
+<body>
+	<canvas id="myCanvas" >Your browser does not support the HTML5 canvas tag. </canvas>
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		//var polygon = [50,50, 100,50, 110,75, 130,90, 100,120, 90,140, 80,120 ];
+        //var polygon = [50,55, 100,80, 190,75, 140,100, 85,120, 90,140, 80,120 ];
+        var polygon = [70,55, 90,80, 110,85, 90,100, 85,120, 67,140, 100,120 ];
+
+		ctx.beginPath();
+		ctx.moveTo(polygon[0], polygon[1]);
+		for(item = 2; item < polygon.length-1; item += 2 ){
+			ctx.lineTo( polygon[item] , polygon[item+1] )
+		}
+		ctx.closePath();
+		ctx.stroke();
+	</script>
+</body>
+</html>
